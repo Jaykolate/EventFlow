@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #000000;
+  --bg-card: #111111;
+  --bg-hover: #1a1a1a;
+  --border: #2e2e2e;
+  --border-hover: #444444;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1a1;
+  --text-muted: #666666;
+  --accent: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+@layer components {
+
+  /* Buttons */
+  .btn-primary {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .btn-primary:hover {
+    background-color: #e5e5e5;
+  }
+  .btn-primary:active { transform: scale(0.98); }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.375rem;
+    border: 1px solid #2e2e2e;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .btn-secondary:hover {
+    border-color: #555;
+    background-color: #111111;
+  }
+
+  .btn-danger {
+    background-color: transparent;
+    color: #ff4444;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.375rem;
+    border: 1px solid #ff444433;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn-danger:hover {
+    background-color: #ff444410;
+    border-color: #ff4444;
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+    color: #a1a1a1;
+    font-weight: 400;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn-ghost:hover {
+    background-color: #111111;
+    color: #ffffff;
+  }
+
+  /* Cards */
+  .card {
+    background-color: #111111;
+    border: 1px solid #2e2e2e;
+    border-radius: 0.75rem;
+    transition: border-color 0.15s ease;
+  }
+  .card:hover {
+    border-color: #444444;
+  }
+
+  .card-glow {
+    background-color: #111111;
+    border: 1px solid #2e2e2e;
+    border-radius: 0.75rem;
+    transition: all 0.15s ease;
+  }
+  .card-glow:hover {
+    border-color: #ffffff30;
+    background-color: #161616;
+  }
+
+  /* Inputs */
+  .input-field {
+    width: 100%;
+    background-color: #0a0a0a;
+    border: 1px solid #2e2e2e;
+    color: #ffffff;
+    border-radius: 0.375rem;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.15s ease;
+    outline: none;
+  }
+  .input-field::placeholder { color: #555555; }
+  .input-field:focus {
+    border-color: #666666;
+  }
+
+  .input-label {
+    display: block;
+    color: #a1a1a1;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.01em;
+  }
+
+  /* Badges */
+  .badge-upcoming {
+    background-color: #1a1a1a;
+    color: #a1a1a1;
+    border: 1px solid #2e2e2e;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+  }
+
+  .badge-ongoing {
+    background-color: #0d1f0d;
+    color: #4ade80;
+    border: 1px solid #4ade8033;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+  }
+
+  .badge-completed {
+    background-color: #1a1a1a;
+    color: #555555;
+    border: 1px solid #2e2e2e;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+  }
+
+  .badge-organizer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #444;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+  }
+
+  .badge-participant {
+    background-color: #1a1a1a;
+    color: #a1a1a1;
+    border: 1px solid #2e2e2e;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+  }
+
+  /* Layout */
+  .page-container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .page-subtitle {
+    color: #666666;
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Stat Cards */
+  .stat-card {
+    background-color: #111111;
+    border: 1px solid #2e2e2e;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    transition: border-color 0.15s ease;
+  }
+  .stat-card:hover { border-color: #444; }
+
+  .stat-number {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+  }
+
+  .stat-label {
+    color: #666666;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 0.25rem;
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #2e2e2e;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid #2e2e2e;
+    margin: 1.5rem 0;
+  }
+
+  /* Section header */
+  .section-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  /* Empty state */
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: #555555;
+    font-size: 0.875rem;
+  }
+
+  /* Animations */
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-in;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
